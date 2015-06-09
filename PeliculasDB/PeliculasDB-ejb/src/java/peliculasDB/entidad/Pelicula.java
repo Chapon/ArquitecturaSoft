@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Pelicula extends EntidadPersistente {
@@ -11,8 +12,10 @@ public class Pelicula extends EntidadPersistente {
     @Column(nullable = false)
     private String nombre;
     @Column(nullable = false)
+    @OneToOne
     private Director director; 
     @Column(nullable = false)
+    @OneToOne
     private Genero genero; 
     @Column(nullable = false)
     private int anio; 

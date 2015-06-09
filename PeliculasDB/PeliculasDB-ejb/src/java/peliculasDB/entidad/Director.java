@@ -10,9 +10,9 @@ import javax.persistence.OneToMany;
 public class Director extends Persona {
     
     @Column(nullable = false)
-    private String nacionalidad;
-    
+    private String nacionalidad;  
     @Column(nullable = false)
+    @OneToMany (mappedBy = "Director")
     private List<Pelicula> peliculas;
     
     public String getNacionalidad() {
@@ -23,8 +23,8 @@ public class Director extends Persona {
         this.nacionalidad = n;
     }  
     
-    public List<Pelicula> getPeliculas(List<Pelicula> p) {
-        return this.peliculas = p;
+    public List<Pelicula> getPeliculas() {
+        return this.peliculas;
     }
 
     public void setPeliculas(List<Pelicula> p) {
