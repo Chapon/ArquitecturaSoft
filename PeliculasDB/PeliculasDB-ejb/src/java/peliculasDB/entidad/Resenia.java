@@ -2,19 +2,23 @@ package peliculasDB.entidad;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Resenia extends EntidadPersistente{
     
     @Column(nullable = false)
-    @OneToOne (mappedBy = "Resenia")
+    @OneToOne 
     private Pelicula pelicula;
     @Column(nullable = false)
     private String nota;
-    
     @Column(nullable = false)
     private int calificacion;
+    @Column(nullable = false)
+    @ManyToOne
+    private Critico critico;
+
     
     public Pelicula getPelicula() {
         return pelicula;
@@ -39,6 +43,14 @@ public class Resenia extends EntidadPersistente{
     public void setCalificacion(int c) {
         this.calificacion = c;
     }  
+    
+    public Critico getCritico() {
+        return critico;
+    }
+    
+    public void setCritico(Critico c) {
+        this.critico = c;
+    } 
     
     @Override
     public String toString() {

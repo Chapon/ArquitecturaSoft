@@ -7,7 +7,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Director extends Persona {
+public class Actor extends Persona {
     
     @Column(nullable = false)
     private String nacionalidad;  
@@ -18,11 +18,11 @@ public class Director extends Persona {
     
     public void setNacionalidad(String n) {
         this.nacionalidad = n;
-    }    
+    }     
     
     @Override
     public String toString() {
-        return "Director{" + "nombre=" + this.getNombre() + '}';
+        return "Actor{" + "nombre=" + this.getNombre() + '}';
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Director extends Persona {
         if (getClass() != object.getClass()) {
             return false;
         }
-        final Director other = (Director) object;
+        final Actor other = (Actor) object;
         if ((this.getNombre() == null) ? (other.getNombre() != null) : !this.getNombre().equals(other.getNombre())) {
             return false;
         }

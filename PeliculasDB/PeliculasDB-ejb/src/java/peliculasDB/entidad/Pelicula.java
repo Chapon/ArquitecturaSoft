@@ -20,7 +20,7 @@ public class Pelicula extends EntidadPersistente {
     @Column(nullable = false)
     private int anio; 
     @OneToMany(mappedBy = "Pelicula")
-    private List<Resenia> resenias;
+    private List<Actor> actores;
     
     public String getNombre() {
         return nombre;
@@ -54,12 +54,12 @@ public class Pelicula extends EntidadPersistente {
         this.anio = a;
     }      
     
-    public List<Resenia> getResenias() {
-        return resenias;
+    public List<Actor> getResenias() {
+        return actores;
     }
 
-    public void setResenias(List<Resenia> r) {
-        this.resenias = r;
+    public void setResenias(List<Actor> a) {
+        this.actores = a;
     }
     
     @Override
