@@ -31,7 +31,7 @@ public class Actor extends Persona {
         hash = 97 * hash + (this.getNombre() != null ? this.getNombre().hashCode() : 0);
         return hash;
     }
-
+//hola 
     @Override
     public boolean equals(Object object) {
         if (object == null) {
