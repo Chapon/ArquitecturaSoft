@@ -1,9 +1,9 @@
 package peliculasDB.entidad;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 
-@Entity
+@MappedSuperclass
 public class Persona extends EntidadPersistente {
     
     @Column(nullable = false)

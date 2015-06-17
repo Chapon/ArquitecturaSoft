@@ -3,7 +3,7 @@ package peliculasDB.entidad;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -19,7 +19,7 @@ public class Pelicula extends EntidadPersistente {
     private Genero genero; 
     @Column(nullable = false)
     private int anio; 
-    @OneToMany(mappedBy = "Pelicula")
+    @ManyToMany
     private List<Actor> actores;
     
     public String getNombre() {
